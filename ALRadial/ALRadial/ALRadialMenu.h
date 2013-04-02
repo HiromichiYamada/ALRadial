@@ -27,7 +27,7 @@
  * @return size of the arc
  * @param radialMenu the radial menu object making the request
  */
- - (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu;
+- (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu;
 
 /** 
  * when called with this message delegate's should return the arc radius (distance between the button and objects final resting spot)
@@ -61,13 +61,12 @@
  */
 - (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu;
 
-
 /**
  * when called with this message delegate's should return the size of the button.
  * @return size of the button
  * @param radialMenu the radial menu object making the request
  */
-- (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu;
+- (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu buttonAtIndex:(NSInteger)index;
 
 @end
 

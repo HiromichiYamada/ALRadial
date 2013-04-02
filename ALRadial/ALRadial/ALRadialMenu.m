@@ -53,13 +53,14 @@
 	CGPoint origin = CGPointMake(centerX, centerY);
 	
 	float buttonSize = 25.0f;
-	if ([self.delegate respondsToSelector:@selector(buttonSizeForRadialMenu:)]) {
-		buttonSize = [self.delegate buttonSizeForRadialMenu:self];
-	}
 	
 	int currentItem = 1;
 	ALRadialButton *popupButton;
 	while (currentItem <= itemCount) {
+		if ([self.delegate respondsToSelector:@selector(buttonSizeForRadialMenu:buttonAtIndex:)]) {
+			buttonSize = [self.delegate buttonSizeForRadialMenu:self buttonAtIndex:(currentItem-1)];
+		}
+		
 		float radians = (angle * (currentItem - 1) + start) * (M_PI/180);
 		
 		int x = round (centerX + radius * cos(radians));
